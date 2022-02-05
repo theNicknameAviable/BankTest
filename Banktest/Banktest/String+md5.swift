@@ -8,7 +8,7 @@
 import Foundation
 import CommonCrypto
 
-public extension Strin {
+public extension String {
     func md5() -> String {
         let context = UnsafeMutablePointer<CC_MD5_CTX>.allocate(capacity: 1)
         var digest = Array<UInt8>(repeating: 0, count: Int(CC_MD5_DIGEST_LENGTH))
