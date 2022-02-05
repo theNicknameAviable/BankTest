@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -16,6 +17,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     
+    func fetchInfo() {
+        
+        let url = "https://"
+        AF.request(url, method: .get, parameters: nil, headers: nil).responseData { response in
+            //aquí llega la respuesta del servidor.
+            switch response.result {
+            case .success(<#T##Data#>):
+                print("Validation Successful")
+            case let . failure(error):
+                print(error)
+            }
+        }
+        
+    }
 
 
 
