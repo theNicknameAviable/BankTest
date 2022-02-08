@@ -56,14 +56,11 @@ extension ViewController {
 // MARK: - Instruction
 struct responseMarvel: Codable {
     let code: Int
-    let status, copyright, attributionText, attributionHTML: String
-    let etag: String
     let data: DataClass
 }
 
 // MARK: - DataClass
 struct DataClass: Codable {
-    let offset, limit, total, count: Int
     let results: [Result]
 }
 
@@ -71,13 +68,10 @@ struct DataClass: Codable {
 struct Result: Codable {
     let id: Int
     let name, resultDescription: String
-    let modified: Date
-    let resourceURI: String
 
     enum CodingKeys: String, CodingKey {
         case id, name
         case resultDescription = "description"
-        case modified, resourceURI
     }
 }
 
