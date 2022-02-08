@@ -15,6 +15,7 @@ class ViewController: UIViewController/*, UITableViewDelegate, UITableViewDataSo
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchInfo()
         
     }
     
@@ -29,9 +30,9 @@ class ViewController: UIViewController/*, UITableViewDelegate, UITableViewDataSo
         let url = "\(Self.host)/v1/public/characters\(auth)"
         
         AF.request(url)
-            .responseData {response in
+            .responseDecodable(of: responseMarvel.self) {response in
             //aquí llega la respuesta del servidor.
-                print(response)
+                print(response.value)
         }
         
     }
@@ -50,4 +51,33 @@ extension ViewController {
         <#code#>
     }
 }*/
+
+
+// MARK: - Instruction
+struct responseMarvel: Codable {
+    let code: Int
+    let status, copyright, attributionText, attributionHTML: String
+    let etag: String
+    let data: DataClass
+}
+
+// MARK: - DataClass
+struct DataClass: Codable {
+    let offset, limit, total, count: Int
+    let results: [Result]
+}
+
+// MARK: - Result
+struct Result: Codable {
+    let id: Int
+    let name, resultDescription: String
+    let modified: Date
+    let resourceURI: String
+
+    enum CodingKeys: String, CodingKey {
+        case id, name
+        case resultDescription = "description"
+        case modified, resourceURI
+    }
+}
 
