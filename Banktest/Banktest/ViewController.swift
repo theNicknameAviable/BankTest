@@ -25,7 +25,7 @@ class ViewController: UIViewController/*, UITableViewDelegate, UITableViewDataSo
         let privateKey = "8074772204a5fa9445ca96c81837f2b6d85b546b"
         let hash = String(format: "%@%@%@", timeStamp, privateKey, publicKey)
         let hasMD5 = hash.md5()
-        let auth = "?ts=\(timeStamp)1&apikey=\(publicKey)1234&hash=\(hasMD5)"
+        let auth = "?ts=\(timeStamp)&apikey=\(publicKey)&hash=\(hasMD5)"
         let url = "\(Self.host)/v1/public/characters\(auth)"
         
         AF.request(url)
