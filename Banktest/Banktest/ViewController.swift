@@ -12,11 +12,13 @@ class ViewController: UIViewController/*, UITableViewDelegate, UITableViewDataSo
     
     @IBOutlet weak var table: UITableView!
     static let host: String = "https://gateway.marvel.com"
+    var data1: [responseMarvel] = []
+    var data2: [DataClass] = []
+    var data3: [Result] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchInfo()
-        
+        fetchInfo()        
     }
     
     func fetchInfo() {
@@ -47,38 +49,29 @@ class ViewController: UIViewController/*, UITableViewDelegate, UITableViewDataSo
 }
 
 //MARK: - TABLE
-/*
+
 extension ViewController {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return data3.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as? characterCell
+        cell?.character.text = "Character: \(data3[indexPath.row].name)"
+
+    if data3[indexPath.row].isvalid {
+        cell?.lineView.backgroundColor = UIColor(red: 0.37, green: 0.56, blue: 0.22, alpha: 1.00)
+        cell?.arrowImageView.tintColor = UIColor(red: 0.37, green: 0.56, blue: 0.22, alpha: 1.00)
+    } else {
+        cell?.lineView.backgroundColor = UIColor(red: 0.56, green: 0.04, blue: 0.11, alpha: 1.00)
+        cell?.arrowImageView.tintColor = UIColor(red: 0.56, green: 0.04, blue: 0.11, alpha: 1.00)
     }
-}*/
-
-
-// MARK: - Instruction
-struct responseMarvel: Codable {
-    let code: Int
-    let data: DataClass
-}
-
-// MARK: - DataClass
-struct DataClass: Codable {
-    let results: [Result]
-}
-
-// MARK: - Result
-struct Result: Codable {
-    let id: Int
-    let name, resultDescription: String
-
-    enum CodingKeys: String, CodingKey {
-        case id, name
-        case resultDescription = "description"
+ 
+    if let celda = cell {
+        return celda
+    }
+    return UITableViewCell()
     }
 }
 
