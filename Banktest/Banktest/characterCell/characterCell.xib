@@ -11,7 +11,7 @@
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="68" id="RMf-fV-JCm">
             <rect key="frame" x="0.0" y="0.0" width="414" height="68"/>
             <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RMf-fV-JCm" id="22h-03-aT3" customClass="characterCell" customModule="Banktest">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RMf-fV-JCm" id="22h-03-aT3" customClass="characterCell" customModule="Banktest" customModuleProvider="target">
                 <rect key="frame" x="0.0" y="0.0" width="414" height="68"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>

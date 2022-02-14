@@ -18,7 +18,7 @@ class ViewController: UIViewController/*, UITableViewDelegate, UITableViewDataSo
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchInfo()        
+        fetchInfo()
     }
     
     func fetchInfo() {
@@ -57,17 +57,9 @@ extension ViewController {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as? characterCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "characterCell", for: indexPath) as? characterCell
         cell?.character.text = "Character: \(data3[indexPath.row].name)"
 
-    if data3[indexPath.row].isvalid {
-        cell?.lineView.backgroundColor = UIColor(red: 0.37, green: 0.56, blue: 0.22, alpha: 1.00)
-        cell?.arrowImageView.tintColor = UIColor(red: 0.37, green: 0.56, blue: 0.22, alpha: 1.00)
-    } else {
-        cell?.lineView.backgroundColor = UIColor(red: 0.56, green: 0.04, blue: 0.11, alpha: 1.00)
-        cell?.arrowImageView.tintColor = UIColor(red: 0.56, green: 0.04, blue: 0.11, alpha: 1.00)
-    }
- 
     if let celda = cell {
         return celda
     }
