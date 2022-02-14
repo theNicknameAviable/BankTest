@@ -33,6 +33,13 @@ class ViewController: UIViewController/*, UITableViewDelegate, UITableViewDataSo
             .responseDecodable(of: responseMarvel.self) {response in
             //aquí llega la respuesta del servidor.
                 print(response.value)
+                if let value = response.value {
+                    //funciona y recarga
+                } else {
+                    // mostrar error
+                }
+                let characters = response.value?.data ?? []
+                //tableView.reloadData()
         }
         
     }
