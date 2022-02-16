@@ -8,7 +8,7 @@
 import UIKit
 import Alamofire
 
-class ViewController: UIViewController/*, UITableViewDelegate, UITableViewDataSource*/ {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var table: UITableView!
     static let host: String = "https://gateway.marvel.com"
@@ -19,6 +19,10 @@ class ViewController: UIViewController/*, UITableViewDelegate, UITableViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchInfo()
+        table.estimatedRowHeight = 90
+        table.dataSource = self
+        table.delegate = self
+        registerTableViewCells()
     }
     
     func fetchInfo() {
@@ -41,7 +45,7 @@ class ViewController: UIViewController/*, UITableViewDelegate, UITableViewDataSo
                     // mostrar error
                 }
                 let characters = response.value?.data ?? []
-                //tableView.reloadData()
+                 //tableView.reloadData()
         }
         
     }
@@ -57,13 +61,19 @@ extension ViewController {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "characterCell", for: indexPath) as? characterCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CharacterCell", for: indexPath) as? characterCell
         cell?.character.text = "Character: \(data3[indexPath.row].name)"
 
     if let celda = cell {
         return celda
     }
     return UITableViewCell()
+        
     }
-}
+    
+    func registerTableViewCells() {
+        let textFieldCell = UINib(nibName: "characterCell",bundle: nil)
+        table.register(textFieldCell,forCellReuseIdentifier: "CharacterCell")
+    }
 
+}

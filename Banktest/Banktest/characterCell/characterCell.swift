@@ -9,8 +9,8 @@ import Foundation
 import UIKit
 
 class characterCell: UITableViewCell {
+  
     @IBOutlet weak var character: UILabel!
-
     
     override func awakeFromNib() {
         super.awakeFromNib()
