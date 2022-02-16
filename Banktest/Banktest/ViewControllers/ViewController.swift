@@ -56,7 +56,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 } else {
                     // mostrar error
                 }
-                //let characters = response.value?.data ?? []
+                let characters = response.value?.data ?? []
                  //tableView.reloadData()
         }
         
