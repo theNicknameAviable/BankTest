@@ -15,6 +15,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var data1: [responseMarvel] = []
     var data2: [DataClass] = []
     var data3: [Result] = []
+    var emptyView: UIView!
+    var emptyLabel: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +25,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         table.dataSource = self
         table.delegate = self
         registerTableViewCells()
+    }
+    
+    func reloadData() {
+        data3 = PersistenceManager.read()
+        if data3.isEmpty {
+            showEmptyView()
+        } else {
+            hideEmptyView()
+        }
+        table.reloadData()
     }
     
     func fetchInfo() {
@@ -44,7 +56,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 } else {
                     // mostrar error
                 }
-                let characters = response.value?.data ?? []
+                //let characters = response.value?.data ?? []
                  //tableView.reloadData()
         }
         
@@ -76,4 +88,39 @@ extension ViewController {
         table.register(textFieldCell,forCellReuseIdentifier: "CharacterCell")
     }
 
+}
+
+
+//MARK: - Configuration
+extension ViewController {
+    
+    func showEmptyView() {
+        if !self.view.subviews.contains(emptyView) {
+            self.view.insertSubview(emptyView, belowSubview: table)
+            NSLayoutConstraint.activate([
+                emptyView.widthAnchor.constraint(equalToConstant: 250),
+                emptyView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                emptyView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+                emptyView.heightAnchor.constraint(equalToConstant: 250)])
+            
+            self.view.insertSubview(emptyLabel, belowSubview: table)
+            NSLayoutConstraint.activate([
+                emptyLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+                emptyLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+                emptyLabel.topAnchor.constraint(equalTo: emptyView.bottomAnchor, constant: 10),
+                emptyLabel.heightAnchor.constraint(equalToConstant: 40)])
+            
+            
+        }
+        emptyView.play(completion: nil)
+    }
+    
+    func hideEmptyView() {
+        if self.view.subviews.contains(emptyView) {
+            emptyView.removeFromSuperview()
+            emptyLabel.removeFromSuperview()
+        }
+    }
+    
+    
 }
