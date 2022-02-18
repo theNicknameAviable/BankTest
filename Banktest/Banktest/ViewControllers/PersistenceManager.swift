@@ -43,12 +43,12 @@ class PlistPersistenceManager: PersistenceManager{
         }
     }
     
-    func read() -> [SearchItem]{
+    func read() -> [Result]{
         let path = getFilePath()
         let decoder = PropertyListDecoder()
         do{
             let xml = try Data(contentsOf: path)
-            let object = try decoder.decode([SearchItem].self, from: xml)
+            let object = try decoder.decode([Result].self, from: xml)
             return object
         }
         catch{

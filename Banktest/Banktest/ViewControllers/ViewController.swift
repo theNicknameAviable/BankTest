@@ -28,7 +28,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func reloadData() {
-        data3 = PersistenceManager.read()
+        //data3 = PersistenceManager.read()
         if data3.isEmpty {
             showEmptyView()
         } else {
@@ -56,7 +56,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 } else {
                     // mostrar error
                 }
-                let characters = response.value?.data ?? []
+                //let characters = response.value?.data ?? []
                  //tableView.reloadData()
         }
         
@@ -98,7 +98,7 @@ extension ViewController {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = data3[indexPath.row]
-        showVIESDetail(response: Result(isValid: item.isvalid, name: item.name, address: item.adress, country: item.country, date: item.date), vat: item.vat)
+        //showVIESDetail(response: Result(isValid: item.isvalid, name: item.name, address: item.adress, country: item.country, date: item.date), vat: item.vat)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 
@@ -126,7 +126,7 @@ extension ViewController {
             
             
         }
-        emptyView.play(completion: nil)
+       // emptyView.play(completion: nil)
     }
     
     func hideEmptyView() {
