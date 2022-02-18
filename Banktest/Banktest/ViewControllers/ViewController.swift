@@ -76,9 +76,9 @@ extension ViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CharacterCell", for: indexPath) as? characterCell
         cell?.character.text = "Character: \(data3[indexPath.row].name)"
 
-    if let celda = cell {
-        return celda
-    }
+        if let celda = cell {
+            return celda
+        }
     return UITableViewCell()
         
     }
@@ -86,6 +86,14 @@ extension ViewController {
     func registerTableViewCells() {
         let textFieldCell = UINib(nibName: "characterCell",bundle: nil)
         table.register(textFieldCell,forCellReuseIdentifier: "CharacterCell")
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return NSLocalizedString("Character", comment: "")
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 30
     }
 
 }
