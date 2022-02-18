@@ -95,6 +95,12 @@ extension ViewController {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 30
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = data3[indexPath.row]
+        showVIESDetail(response: Result(isValid: item.isvalid, name: item.name, address: item.adress, country: item.country, date: item.date), vat: item.vat)
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 
 }
 
