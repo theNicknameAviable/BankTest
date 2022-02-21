@@ -28,7 +28,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func reloadData() {
-        //data3 = PersistenceManager.read()
         if data3.isEmpty {
             showEmptyView()
         } else {
@@ -56,8 +55,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 } else {
                     // mostrar error
                 }
-                //let characters = response.value?.data ?? []
-                 //tableView.reloadData()
+                let characters = response.value?.data ?? []
+                table.reloadData()
         }
         
     }

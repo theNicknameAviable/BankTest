@@ -18,7 +18,6 @@
 		4F2D653527A9BCE700D24BBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F2D653427A9BCE700D24BBD /* Assets.xcassets */; };
 		4F2D653827A9BCE700D24BBD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F2D653627A9BCE700D24BBD /* LaunchScreen.storyboard */; };
 		4FDB5DDD27AE9E240030CB04 /* String+md5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDB5DDC27AE9E240030CB04 /* String+md5.swift */; };
-		4FF1161127BD83E700B83A9F /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF1161027BD83E700B83A9F /* PersistenceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +34,6 @@
 		4F2D653727A9BCE700D24BBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4F2D653927A9BCE700D24BBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FDB5DDC27AE9E240030CB04 /* String+md5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+md5.swift"; sourceTree = "<group>"; };
-		4FF1161027BD83E700B83A9F /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		61FC614DAF418EB2DB91C840 /* Pods_Banktest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Banktest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA2DB37181E4FF561D25F50C /* Pods-Banktest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Banktest.debug.xcconfig"; path = "Target Support Files/Pods-Banktest/Pods-Banktest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,7 +106,6 @@
 			isa = PBXGroup;
 			children = (
 				4F2D652F27A9BCE500D24BBD /* ViewController.swift */,
-				4FF1161027BD83E700B83A9F /* PersistenceManager.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -247,7 +244,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F11767727BAE3CA000C8C12 /* APIStruct.swift in Sources */,
-				4FF1161127BD83E700B83A9F /* PersistenceManager.swift in Sources */,
 				4F11767A27BAE540000C8C12 /* characterCell.swift in Sources */,
 				4F2D653027A9BCE500D24BBD /* ViewController.swift in Sources */,
 				4F2D652C27A9BCE500D24BBD /* AppDelegate.swift in Sources */,
