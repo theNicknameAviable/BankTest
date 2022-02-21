@@ -135,5 +135,17 @@ extension ViewController {
         }
     }
     
+    func showCompanyDetail() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let detailViewController = storyboard.instantiateViewController(identifier: "ViewControllerDataCompany") as? VCDataCompany else {return}
+        detailViewController.address = response?.address
+        detailViewController.name = response?.name
+        detailViewController.country =  response?.country ?? currentCountry
+        detailViewController.valid = response?.isValid == true
+        detailViewController.vat = vat
+        detailViewController.date = dateConsult(date: response?.date ?? Date())
+        present(detailViewController, animated: true, completion: nil)
+    }
+    
     
 }
