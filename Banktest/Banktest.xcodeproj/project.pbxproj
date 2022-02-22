@@ -17,6 +17,7 @@
 		4F2D653327A9BCE500D24BBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F2D653127A9BCE500D24BBD /* Main.storyboard */; };
 		4F2D653527A9BCE700D24BBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F2D653427A9BCE700D24BBD /* Assets.xcassets */; };
 		4F2D653827A9BCE700D24BBD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F2D653627A9BCE700D24BBD /* LaunchScreen.storyboard */; };
+		4F4932B327C565AF00F633D6 /* ViewControllerCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4932B227C565AF00F633D6 /* ViewControllerCharacter.swift */; };
 		4FDB5DDD27AE9E240030CB04 /* String+md5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDB5DDC27AE9E240030CB04 /* String+md5.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		4F2D653427A9BCE700D24BBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F2D653727A9BCE700D24BBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4F2D653927A9BCE700D24BBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F4932B227C565AF00F633D6 /* ViewControllerCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerCharacter.swift; sourceTree = "<group>"; };
 		4FDB5DDC27AE9E240030CB04 /* String+md5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+md5.swift"; sourceTree = "<group>"; };
 		61FC614DAF418EB2DB91C840 /* Pods_Banktest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Banktest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA2DB37181E4FF561D25F50C /* Pods-Banktest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Banktest.debug.xcconfig"; path = "Target Support Files/Pods-Banktest/Pods-Banktest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				4F2D652F27A9BCE500D24BBD /* ViewController.swift */,
+				4F4932B227C565AF00F633D6 /* ViewControllerCharacter.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				4F2D652C27A9BCE500D24BBD /* AppDelegate.swift in Sources */,
 				4F2D652E27A9BCE500D24BBD /* SceneDelegate.swift in Sources */,
 				4FDB5DDD27AE9E240030CB04 /* String+md5.swift in Sources */,
+				4F4932B327C565AF00F633D6 /* ViewControllerCharacter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

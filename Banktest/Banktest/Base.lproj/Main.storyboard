@@ -55,10 +55,10 @@
             </objects>
             <point key="canvasLocation" x="-270" y="-47"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller Character-->
         <scene sceneID="yqP-iI-DC8">
             <objects>
-                <viewController id="MVC-RO-Z4B" sceneMemberID="viewController">
+                <viewController id="MVC-RO-Z4B" customClass="ViewControllerCharacter" customModule="Banktest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fJY-mb-bGY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
