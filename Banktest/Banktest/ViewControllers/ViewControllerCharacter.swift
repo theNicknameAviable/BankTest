@@ -12,6 +12,9 @@ import Alamofire
 
 class ViewControllerCharacter: UIViewController{
 
+    @IBOutlet weak var characterName: UILabel!
+    @IBOutlet weak var description: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
