@@ -135,9 +135,9 @@ extension ViewController {
         }
     }
     
-    func showCompanyDetail() {
+    func showDescriptionCharacter() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let detailViewController = storyboard.instantiateViewController(identifier: "ViewControllerDataCompany") as? VCDataCompany else {return}
+        guard let detailViewController = storyboard.instantiateViewController(identifier: "ViewControllerCharacter") as? ViewControllerCharacter else {return}
         detailViewController.address = response?.address
         detailViewController.name = response?.name
         detailViewController.country =  response?.country ?? currentCountry
