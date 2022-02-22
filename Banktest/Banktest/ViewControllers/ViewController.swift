@@ -17,6 +17,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var data3: [Result] = []
     var emptyView: UIView!
     var emptyLabel: UIView!
+    var response: Result?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -138,12 +139,8 @@ extension ViewController {
     func showDescriptionCharacter() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let detailViewController = storyboard.instantiateViewController(identifier: "ViewControllerCharacter") as? ViewControllerCharacter else {return}
-        detailViewController.address = response?.address
-        detailViewController.name = response?.name
-        detailViewController.country =  response?.country ?? currentCountry
-        detailViewController.valid = response?.isValid == true
-        detailViewController.vat = vat
-        detailViewController.date = dateConsult(date: response?.date ?? Date())
+        detailViewController.character = response?.character
+        detailViewController.infoCharacter =  response?.infoCharacter
         present(detailViewController, animated: true, completion: nil)
     }
     
