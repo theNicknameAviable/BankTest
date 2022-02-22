@@ -139,8 +139,8 @@ extension ViewController {
     func showDescriptionCharacter() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let detailViewController = storyboard.instantiateViewController(identifier: "ViewControllerCharacter") as? ViewControllerCharacter else {return}
-        detailViewController.character = response?.character
-        detailViewController.infoCharacter =  response?.infoCharacter
+        detailViewController.character = response?.name
+        detailViewController.infoCharacter =  response?.resultDescription
         present(detailViewController, animated: true, completion: nil)
     }
     
