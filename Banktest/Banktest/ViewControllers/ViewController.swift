@@ -98,8 +98,8 @@ extension ViewController {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = data3[indexPath.row]
-        showCharacterDetail(response: <#T##Result#>)(response: Result(id: item.isvalid, name: item.name, address: item.adress, country: item.country, date: item.date), vat: item.vat)
-        tableView.deselectRow(at: indexPath, animated: true)
+        showCharacterDetail(response: Result(id: item.id, name: item.name, resultDescription: item.resultDescription),
+        tableView.deselectRow(at: indexPath, animated: true))
     }
 
 }
