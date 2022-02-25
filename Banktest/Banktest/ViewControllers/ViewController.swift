@@ -98,7 +98,7 @@ extension ViewController {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = data3[indexPath.row]
-        //showVIESDetail(response: Result(isValid: item.isvalid, name: item.name, address: item.adress, country: item.country, date: item.date), vat: item.vat)
+        showCharacterDetail(response: <#T##Result#>)(response: Result(id: item.isvalid, name: item.name, address: item.adress, country: item.country, date: item.date), vat: item.vat)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 
@@ -142,6 +142,11 @@ extension ViewController {
         detailViewController.character = response?.name
         detailViewController.infoCharacter =  response?.resultDescription
         present(detailViewController, animated: true, completion: nil)
+    }
+    
+    func showCharacterDetail(response: Result) {
+        self.response = response
+        showDescriptionCharacter()
     }
     
 }
