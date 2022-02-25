@@ -84,6 +84,7 @@
                     <connections>
                         <outlet property="characterName" destination="32r-m9-vAe" id="Ofq-JK-vyy"/>
                         <outlet property="description" destination="ZdH-f0-DaW" id="OVT-ee-7ag"/>
+                        <outlet property="descriptionCharacter" destination="ZdH-f0-DaW" id="SX2-kh-CCi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="smt-JK-HNW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

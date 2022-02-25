@@ -20,6 +20,12 @@ class ViewControllerCharacter: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        printDescription()
+    }
+    
+    func printDescription() {
+        
+        
     }
     
     
