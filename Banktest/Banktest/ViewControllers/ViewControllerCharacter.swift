@@ -23,6 +23,7 @@ class ViewControllerCharacter: UIViewController{
         printDescription()
     }
     
+    //its not a good idea
     func printDescription() {
         let marvelCharacter = Result.self
         switch descriptionCharacter {
