@@ -22,7 +22,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         view.font = UIFont.systemFont(ofSize: 16)
         view.textAlignment = .center
         view.numberOfLines = 0
-        view.text = NSLocalizedString("main.one.empty.label", comment: "")
+        view.text = NSLocalizedString("No Info", comment: "")
         return view
     }()
 
