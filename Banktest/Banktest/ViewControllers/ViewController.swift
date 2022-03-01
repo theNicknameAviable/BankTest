@@ -44,8 +44,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         table.reloadData()
     }
     
-    
-    
     func fetchInfo() {
         
         let timeStamp = String(format: "%.f", Date().timeIntervalSince1970)
@@ -85,16 +83,15 @@ extension ViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CharacterCell", for: indexPath) as? CharacterCell
         cell?.character.text = "Character: \(characterList[indexPath.row].name)"
 
-        if let celda = cell {
-            return celda
+        if let safeCell = cell {
+            return safeCell
         }
-    return UITableViewCell()
-        
+        return UITableViewCell()
     }
     
     func registerTableViewCells() {
-        let textFieldCell = UINib(nibName: "CharacterCell",bundle: nil)
-        table.register(textFieldCell,forCellReuseIdentifier: "CharacterCell")
+        let textFieldCell = UINib(nibName: "CharacterCell", bundle: nil)
+        table.register(textFieldCell, forCellReuseIdentifier: "CharacterCell")
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -136,9 +133,9 @@ extension ViewController {
     
     func showCharacterDetail(response: MarvelResult) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let detailViewController = storyboard.instantiateViewController(identifier: "ViewControllerCharacter") as? ViewControllerCharacter else {return}
+        guard let detailViewController = storyboard.instantiateViewController(identifier: "ViewControllerCharacter") as? ViewControllerCharacter else { return }
         detailViewController.character = response.name
-        detailViewController.infoCharacter =  response.resultDescription
+        detailViewController.infoCharacter = response.resultDescription
         present(detailViewController, animated: true, completion: nil)
     }
     
