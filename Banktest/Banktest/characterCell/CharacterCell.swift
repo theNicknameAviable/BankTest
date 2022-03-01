@@ -5,10 +5,9 @@
 //  Created by Raul Bautista on 14/2/22.
 //
 
-import Foundation
 import UIKit
 
-class characterCell: UITableViewCell {
+class CharacterCell: UITableViewCell {
   
     @IBOutlet weak var character: UILabel!
     

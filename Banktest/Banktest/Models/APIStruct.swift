@@ -6,23 +6,21 @@
 //
 
 import Foundation
-import Alamofire
-import UIKit
 
 
 // MARK: - Instruction
-struct responseMarvel: Codable {
+struct ResponseMarvel: Codable {
     let code: Int
-    let data: DataClass
+    let data: MarvelData
 }
 
 // MARK: - DataClass
-struct DataClass: Codable {
-    let results: [Result]
+struct MarvelData: Codable {
+    let results: [MarvelResult]
 }
 
 // MARK: - Result
-struct Result: Codable {
+struct MarvelResult: Codable {
     let id: Int
     let name, resultDescription: String
 

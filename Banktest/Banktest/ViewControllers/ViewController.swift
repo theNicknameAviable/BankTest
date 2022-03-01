@@ -12,12 +12,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var table: UITableView!
     static let host: String = "https://gateway.marvel.com"
-    var data1: [responseMarvel] = []
-    var data2: [DataClass] = []
-    var data3: [Result] = []
+    var data1: [ResponseMarvel] = []
+    var data2: [MarvelData] = []
+    var data3: [MarvelResult] = []
     var emptyView: UIView!
     var emptyLabel: UIView!
-    var response: Result?
+    var response: MarvelResult?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,16 +48,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let url = "\(Self.host)/v1/public/characters\(auth)"
         
         AF.request(url)
-            .responseDecodable(of: responseMarvel.self) {response in
+            .responseDecodable(of: ResponseMarvel.self) {response in
             //aquí llega la respuesta del servidor.
                 print(response.value)
                 if let value = response.value {
                     //funciona y recarga
+                    self.data3 = value.data.results
                 } else {
                     // mostrar error
                 }
-                let characters = response.value?.data ?? []
-                table.reloadData()
+                self.table.reloadData()
         }
         
     }
@@ -73,7 +73,7 @@ extension ViewController {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CharacterCell", for: indexPath) as? characterCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CharacterCell", for: indexPath) as? CharacterCell
         cell?.character.text = "Character: \(data3[indexPath.row].name)"
 
         if let celda = cell {
@@ -97,9 +97,9 @@ extension ViewController {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         let item = data3[indexPath.row]
-        showCharacterDetail(response: Result(id: item.id, name: item.name, resultDescription: item.resultDescription),
-        tableView.deselectRow(at: indexPath, animated: true))
+        showCharacterDetail(response: item)
     }
 
 }
@@ -144,7 +144,7 @@ extension ViewController {
         present(detailViewController, animated: true, completion: nil)
     }
     
-    func showCharacterDetail(response: Result) {
+    func showCharacterDetail(response: MarvelResult) {
         self.response = response
         showDescriptionCharacter()
     }

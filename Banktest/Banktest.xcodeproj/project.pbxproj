@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		45049495D333A1801C5BF7AF /* Pods_Banktest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61FC614DAF418EB2DB91C840 /* Pods_Banktest.framework */; };
 		4F11767727BAE3CA000C8C12 /* APIStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F11767627BAE3CA000C8C12 /* APIStruct.swift */; };
-		4F11767A27BAE540000C8C12 /* characterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F11767927BAE540000C8C12 /* characterCell.swift */; };
-		4F11767F27BAE625000C8C12 /* characterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F11767E27BAE625000C8C12 /* characterCell.xib */; };
+		4F11767A27BAE540000C8C12 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F11767927BAE540000C8C12 /* CharacterCell.swift */; };
+		4F11767F27BAE625000C8C12 /* CharacterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F11767E27BAE625000C8C12 /* CharacterCell.xib */; };
 		4F2D652C27A9BCE500D24BBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2D652B27A9BCE500D24BBD /* AppDelegate.swift */; };
 		4F2D652E27A9BCE500D24BBD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2D652D27A9BCE500D24BBD /* SceneDelegate.swift */; };
 		4F2D653027A9BCE500D24BBD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2D652F27A9BCE500D24BBD /* ViewController.swift */; };
@@ -24,8 +24,8 @@
 /* Begin PBXFileReference section */
 		19D5B135C6CD3ABCF0DBE102 /* Pods-Banktest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Banktest.release.xcconfig"; path = "Target Support Files/Pods-Banktest/Pods-Banktest.release.xcconfig"; sourceTree = "<group>"; };
 		4F11767627BAE3CA000C8C12 /* APIStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIStruct.swift; sourceTree = "<group>"; };
-		4F11767927BAE540000C8C12 /* characterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = characterCell.swift; sourceTree = "<group>"; };
-		4F11767E27BAE625000C8C12 /* characterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = characterCell.xib; sourceTree = "<group>"; };
+		4F11767927BAE540000C8C12 /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
+		4F11767E27BAE625000C8C12 /* CharacterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterCell.xib; sourceTree = "<group>"; };
 		4F2D652827A9BCE500D24BBD /* Banktest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Banktest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F2D652B27A9BCE500D24BBD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F2D652D27A9BCE500D24BBD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,8 +64,8 @@
 		4F11767D27BAE572000C8C12 /* characterCell */ = {
 			isa = PBXGroup;
 			children = (
-				4F11767927BAE540000C8C12 /* characterCell.swift */,
-				4F11767E27BAE625000C8C12 /* characterCell.xib */,
+				4F11767927BAE540000C8C12 /* CharacterCell.swift */,
+				4F11767E27BAE625000C8C12 /* CharacterCell.xib */,
 			);
 			path = characterCell;
 			sourceTree = "<group>";
@@ -193,7 +193,7 @@
 				4F2D653827A9BCE700D24BBD /* LaunchScreen.storyboard in Resources */,
 				4F2D653527A9BCE700D24BBD /* Assets.xcassets in Resources */,
 				4F2D653327A9BCE500D24BBD /* Main.storyboard in Resources */,
-				4F11767F27BAE625000C8C12 /* characterCell.xib in Resources */,
+				4F11767F27BAE625000C8C12 /* CharacterCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,7 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F11767727BAE3CA000C8C12 /* APIStruct.swift in Sources */,
-				4F11767A27BAE540000C8C12 /* characterCell.swift in Sources */,
+				4F11767A27BAE540000C8C12 /* CharacterCell.swift in Sources */,
 				4F2D653027A9BCE500D24BBD /* ViewController.swift in Sources */,
 				4F2D652C27A9BCE500D24BBD /* AppDelegate.swift in Sources */,
 				4F2D652E27A9BCE500D24BBD /* SceneDelegate.swift in Sources */,
