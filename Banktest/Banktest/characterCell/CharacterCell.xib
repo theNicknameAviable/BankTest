@@ -22,14 +22,22 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m8K-dk-LSm">
-                        <rect key="frame" x="20" y="24" width="42" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m8K-dk-LSm">
+                        <rect key="frame" x="20" y="23.5" width="374" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="fzl-n9-KO9"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="m8K-dk-LSm" firstAttribute="leading" secondItem="22h-03-aT3" secondAttribute="leading" constant="20" id="XkS-aY-J85"/>
+                    <constraint firstAttribute="trailing" secondItem="m8K-dk-LSm" secondAttribute="trailing" constant="20" id="f8v-21-Lab"/>
+                    <constraint firstItem="m8K-dk-LSm" firstAttribute="centerY" secondItem="22h-03-aT3" secondAttribute="centerY" id="hDe-7p-Uu1"/>
+                    <constraint firstItem="m8K-dk-LSm" firstAttribute="centerX" secondItem="22h-03-aT3" secondAttribute="centerX" id="rxR-kC-lWq"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="character" destination="m8K-dk-LSm" id="w1u-9U-KW0"/>

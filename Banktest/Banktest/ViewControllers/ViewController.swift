@@ -13,8 +13,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var table: UITableView!
     static let host: String = "https://gateway.marvel.com"
     var characterList: [MarvelResult] = []
-    var emptyView: UIView!
-    var emptyLabel: UIView!
+    lazy var emptyLabel: UILabel = {
+        let view = UILabel(frame: .zero)
+        view.backgroundColor = .clear
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.isUserInteractionEnabled = false
+        view.textColor = .white
+        view.font = UIFont.systemFont(ofSize: 16)
+        view.textAlignment = .center
+        view.numberOfLines = 0
+        view.text = NSLocalizedString("main.one.empty.label", comment: "")
+        return view
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +43,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         table.reloadData()
     }
+    
+    
     
     func fetchInfo() {
         
@@ -81,7 +93,7 @@ extension ViewController {
     }
     
     func registerTableViewCells() {
-        let textFieldCell = UINib(nibName: "characterCell",bundle: nil)
+        let textFieldCell = UINib(nibName: "CharacterCell",bundle: nil)
         table.register(textFieldCell,forCellReuseIdentifier: "CharacterCell")
     }
     
@@ -106,28 +118,18 @@ extension ViewController {
 extension ViewController {
     
     func showEmptyView() {
-        if !self.view.subviews.contains(emptyView) {
-            self.view.insertSubview(emptyView, belowSubview: table)
-            NSLayoutConstraint.activate([
-                emptyView.widthAnchor.constraint(equalToConstant: 250),
-                emptyView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                emptyView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-                emptyView.heightAnchor.constraint(equalToConstant: 250)])
-            
+        if !self.view.subviews.contains(emptyLabel) {
             self.view.insertSubview(emptyLabel, belowSubview: table)
             NSLayoutConstraint.activate([
-                emptyLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-                emptyLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-                emptyLabel.topAnchor.constraint(equalTo: emptyView.bottomAnchor, constant: 10),
-                emptyLabel.heightAnchor.constraint(equalToConstant: 40)])
-            
-            
+                emptyLabel.widthAnchor.constraint(equalToConstant: 250),
+                emptyLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                emptyLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+                emptyLabel.heightAnchor.constraint(equalToConstant: 250)])
         }
     }
     
     func hideEmptyView() {
-        if self.view.subviews.contains(emptyView) {
-            emptyView.removeFromSuperview()
+        if self.view.subviews.contains(emptyLabel) {
             emptyLabel.removeFromSuperview()
         }
     }

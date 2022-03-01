@@ -21,14 +21,8 @@ class ViewControllerCharacter: UIViewController{
         printDescription()
     }
     
-    //its not a good idea
     func printDescription() {
-        let marvelCharacter = Result.self
-        switch descriptionCharacter {
-        case 0:
-            marvelCharacter?.name = self.character
-            marvelCharacter.resultDescription.text = self.infoCharacter
-        defautl: break
-        }
+        characterName.text = character
+        descriptionCharacter.text = infoCharacter
     }
 }

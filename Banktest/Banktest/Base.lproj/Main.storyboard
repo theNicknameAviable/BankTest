@@ -58,7 +58,7 @@
         <!--View Controller Character-->
         <scene sceneID="yqP-iI-DC8">
             <objects>
-                <viewController id="MVC-RO-Z4B" customClass="ViewControllerCharacter" customModule="Banktest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewControllerCharacter" id="MVC-RO-Z4B" customClass="ViewControllerCharacter" customModule="Banktest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fJY-mb-bGY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -83,7 +83,6 @@
                     </view>
                     <connections>
                         <outlet property="characterName" destination="32r-m9-vAe" id="Ofq-JK-vyy"/>
-                        <outlet property="description" destination="ZdH-f0-DaW" id="OVT-ee-7ag"/>
                         <outlet property="descriptionCharacter" destination="ZdH-f0-DaW" id="SX2-kh-CCi"/>
                     </connections>
                 </viewController>

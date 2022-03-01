@@ -17,7 +17,7 @@ class CharacterCell: UITableViewCell {
     }
     
     func configureView() {
-        character.textColor = .darkGray
+        //character.textColor = .darkGray
         backgroundColor = .white
     }
 }
