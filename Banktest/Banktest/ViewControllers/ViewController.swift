@@ -12,24 +12,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var table: UITableView!
     static let host: String = "https://gateway.marvel.com"
-    var data1: [ResponseMarvel] = []
-    var data2: [MarvelData] = []
-    var data3: [MarvelResult] = []
+    var characterList: [MarvelResult] = []
     var emptyView: UIView!
     var emptyLabel: UIView!
-    var response: MarvelResult?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchInfo()
         table.estimatedRowHeight = 90
         table.dataSource = self
         table.delegate = self
         registerTableViewCells()
+        fetchInfo()
     }
     
     func reloadData() {
-        if data3.isEmpty {
+        if characterList.isEmpty {
             showEmptyView()
         } else {
             hideEmptyView()
@@ -53,11 +50,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 print(response.value)
                 if let value = response.value {
                     //funciona y recarga
-                    self.data3 = value.data.results
+                    self.characterList = value.data.results
                 } else {
                     // mostrar error
                 }
-                self.table.reloadData()
+                self.reloadData()
         }
         
     }
@@ -69,12 +66,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 extension ViewController {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data3.count
+        return characterList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CharacterCell", for: indexPath) as? CharacterCell
-        cell?.character.text = "Character: \(data3[indexPath.row].name)"
+        cell?.character.text = "Character: \(characterList[indexPath.row].name)"
 
         if let celda = cell {
             return celda
@@ -98,7 +95,7 @@ extension ViewController {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let item = data3[indexPath.row]
+        let item = characterList[indexPath.row]
         showCharacterDetail(response: item)
     }
 
@@ -126,7 +123,6 @@ extension ViewController {
             
             
         }
-       // emptyView.play(completion: nil)
     }
     
     func hideEmptyView() {
@@ -136,17 +132,12 @@ extension ViewController {
         }
     }
     
-    func showDescriptionCharacter() {
+    func showCharacterDetail(response: MarvelResult) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let detailViewController = storyboard.instantiateViewController(identifier: "ViewControllerCharacter") as? ViewControllerCharacter else {return}
-        detailViewController.character = response?.name
-        detailViewController.infoCharacter =  response?.resultDescription
+        detailViewController.character = response.name
+        detailViewController.infoCharacter =  response.resultDescription
         present(detailViewController, animated: true, completion: nil)
-    }
-    
-    func showCharacterDetail(response: MarvelResult) {
-        self.response = response
-        showDescriptionCharacter()
     }
     
 }
